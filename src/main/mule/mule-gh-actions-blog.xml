@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="168bca70-e882-4f7f-93fc-2cfd876cc512" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="mule-gh-actions-blogFlow" doc:id="ba0d9ac0-d34c-4c57-a72e-b3b3c8bd691d" >
+		<http:listener doc:name="Listener" doc:id="a45eab01-ae04-48b0-8f4c-d246680c89ab" config-ref="HTTP_Listener_config" path="/*"/>
+		<logger level="INFO" doc:name="START" doc:id="7f9bdbb7-ea5d-4a73-813b-0f0f7af290b5" message="#[correlationId] - START"/>
+		<ee:transform doc:name="PL SET response" doc:id="d0d282eb-4e13-49f2-8d3c-86a66672fb95" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"status": "success"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="END" doc:id="2fd1f223-1595-4512-a62c-64b82478d157" message="#[correlationId] - END"/>
+	</flow>
+</mule>
