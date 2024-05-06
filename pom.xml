@@ -4,7 +4,7 @@
 
 	<groupId>com.mycompany</groupId>
 	<artifactId>mule-gh-actions-custom</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
 
 	<name>mule-gh-actions-custom</name>
@@ -24,7 +24,7 @@
 		<connection>scm:git:https://github.com/tarantsovakseniya/mule-gh-actions-custom.git</connection>
 		<url>scm:git:https://github.com/tarantsovakseniya/mule-gh-actions-custom.git</url>
     	<developerConnection>scm:git:https://github.com/tarantsovakseniya/mule-gh-actions-custom.git</developerConnection>
-    	<tag>mule-gh-actions-custom-1.0.0</tag>
+    	<tag>mule-gh-actions-custom-1.0.1</tag>
     </scm>	
 	<build>
 		<plugins>
