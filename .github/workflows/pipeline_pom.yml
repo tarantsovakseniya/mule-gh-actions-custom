@@ -23,7 +23,11 @@ jobs:
         #Runner
         runs-on: ubuntu-latest
         steps:
-            # This action set up env
+            # This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
+            - name: Get the code
+              uses: actions/checkout@v4
+
+            # Custom action to set up env
             - name: Set up env
               uses: ./.github/actions/mule-env-config
 
