@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
-	<artifactId>mule-gh-actions-blog</artifactId>
+	<artifactId>mule-gh-actions-custom</artifactId>
 	<version>1.0.8-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
